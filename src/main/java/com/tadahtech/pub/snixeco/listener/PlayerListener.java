@@ -15,41 +15,43 @@ import org.bukkit.event.player.PlayerQuitEvent;
 public class PlayerListener implements Listener
 {
 
-	private SQLManager sqlManager;
+    private SQLManager sqlManager;
 
-	public PlayerListener(SQLManager sqlManager)
-	{
-		this.sqlManager = sqlManager;
-	}
+    public PlayerListener(SQLManager sqlManager)
+    {
+        this.sqlManager = sqlManager;
+    }
 
-	@EventHandler
-	public void onJoin(PlayerJoinEvent event)
-	{
-		Player player = event.getPlayer();
+    @EventHandler
+    public void onJoin(PlayerJoinEvent event)
+    {
+        Player player = event.getPlayer();
 
-		PlayerInfo info = PlayerInfo.getInfo(player);
+        PlayerInfo info = PlayerInfo.getInfo(player);
 
-		if(info == null)
-		{
-			sqlManager.getPlayerAsync(player.getUniqueId(), player.getName(), info1 -> {});
-		}
-	}
+        if (info == null)
+        {
+            sqlManager.getPlayerAsync(player.getUniqueId(), player.getName(), info1 ->
+            {
+            });
+        }
+    }
 
-	@EventHandler
-	public void onQuit(PlayerQuitEvent event)
-	{
-		Player player = event.getPlayer();
+    @EventHandler
+    public void onQuit(PlayerQuitEvent event)
+    {
+        Player player = event.getPlayer();
 
-		PlayerInfo info = PlayerInfo.getInfo(player);
+        PlayerInfo info = PlayerInfo.getInfo(player);
 
-		if(info == null)
-		{
-			Snix.getInstance().debug(player.getName() + " had no info!");
-			//Shouldn't happen
-			return;
-		}
+        if (info == null)
+        {
+            Snix.getInstance().debug(player.getName() + " had no info!");
+            //Shouldn't happen
+            return;
+        }
 
-		sqlManager.savePlayer(info);
-	}
+        sqlManager.savePlayer(info);
+    }
 
 }

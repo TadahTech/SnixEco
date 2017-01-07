@@ -42,7 +42,7 @@ public class CommandHandler implements CommandExecutor
     {
         if (baseArgs.length == 0)
         {
-            if(!(commandSender instanceof Player))
+            if (!(commandSender instanceof Player))
             {
                 commandSender.sendMessage("You must be a player!");
                 return true;
@@ -52,7 +52,7 @@ public class CommandHandler implements CommandExecutor
 
             PlayerInfo info = PlayerInfo.getInfo(player);
 
-            if(info == null)
+            if (info == null)
             {
                 Snix.getInstance().getSqlManager().getPlayerAsync(player.getUniqueId(), player.getName(), info1 ->
                 {

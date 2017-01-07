@@ -13,38 +13,38 @@ import java.io.IOException;
 public class LangConfig
 {
 
-	private final File file;
-	private final FileConfiguration config;
+    private final File file;
+    private final FileConfiguration config;
 
-	public LangConfig()
-	{
-		Snix plugin = Snix.getInstance();
-		this.file = new File(plugin.getDataFolder(), "lang.yml");
+    public LangConfig()
+    {
+        Snix plugin = Snix.getInstance();
+        this.file = new File(plugin.getDataFolder(), "lang.yml");
 
-		if(!file.exists())
-		{
-			plugin.saveResource(file.getName(), true);
-		}
+        if (!file.exists())
+        {
+            plugin.saveResource(file.getName(), true);
+        }
 
-		this.config = YamlConfiguration.loadConfiguration(file);
-		Snix.getInstance().debug(String.valueOf(this.config.getKeys(true)));
-	}
+        this.config = YamlConfiguration.loadConfiguration(file);
+        Snix.getInstance().debug(String.valueOf(this.config.getKeys(true)));
+    }
 
-	public void setMessage(String key, String message)
-	{
-		this.config.set(key, message);
-		try
-		{
-			this.config.save(file);
-		} catch (IOException e)
-		{
-			e.printStackTrace();
-		}
-	}
+    public void setMessage(String key, String message)
+    {
+        this.config.set(key, message);
+        try
+        {
+            this.config.save(file);
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
 
-	public String getMessage(String key)
-	{
-		return config.getString(key);
-	}
+    public String getMessage(String key)
+    {
+        return config.getString(key);
+    }
 
 }
