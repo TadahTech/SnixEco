@@ -1,0 +1,5 @@
+name: SnixEco
+main: com.tadahtech.pub.snixeco.Snix
+version: 1.0.0-SNAPSHOT
+commands:
+  snix:

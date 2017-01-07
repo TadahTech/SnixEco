@@ -1,0 +1,26 @@
+prefix: "&7[&3SnixEco&7]"
+
+current-amount: "You currently have &e%amount% &7Snix!"
+
+not-a-command: "&e%variable%&c is not a known command!"
+no-permission: "&cYou don't have permission to use this command!"
+
+not-a-valid-number: "&cWhoops! &e%input%&c is not a valid number!"
+
+fail-player-not-online: "&e%player%&c is not online!"
+fail-generic: "&cThere was an issue with &e%variable% %player% %amount%&c Snix!"
+fail-not-exist: "&cYou tried giving Snix to an invalid player!"
+
+give-success: "You have successfully given &e%amount%&7 Snix to &e%player%"
+give-success-target: "You have received &e%amount%&7 Snix!"
+
+lookup-success: "&e%player%&7 has &e%amount%."
+
+pay-not-enough-snix: "&cYou don't have enough Snix to do that! You only have &e%amount%&c. You're short &e%variable%&c Snix!"
+pay-success-executor: "You have successfully paid &e%player% %amount%&7. You now have &e%variable%&7 left!"
+pay-success-target: "You have received &e%amount%&7 from &e%player%&7. You now have &e%variable%&7 Snix!"
+
+reset-success-executor: "Successfully reset &e%player%&7 Snix!"
+reset-success-target: "Your Snix has been reset!" 
+
+take-success: "You have successfully taken &e%amount%&7 from &e%player%."
